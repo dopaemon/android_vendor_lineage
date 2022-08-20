@@ -309,3 +309,6 @@ include vendor/lineage/config/version.mk
 
 # GMS
 include vendor/custom/config/pixel.mk
+
+# Bootanimation
+include vendor/custom/config/bootanimation.mk
