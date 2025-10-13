@@ -218,6 +218,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/etc/init/init.openssh.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.openssh.rc
 
+# Lineage-specific file
+PRODUCT_COPY_FILES += \
+    vendor/lineage/config/permissions/privapp-permissions-lineagehw.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-lineagehw.xml
+
 # OverlayFS
 PRODUCT_PACKAGES_DEBUG += \
     disable-overlays
@@ -308,7 +312,7 @@ include vendor/lineage/config/version.mk
 -include vendor/lineage/config/partner_gms.mk
 
 # GMS
-include vendor/custom/config/pixel.mk
+include vendor/lineage/config/pixel.mk
 
 # Bootanimation
-include vendor/custom/config/bootanimation.mk
+include vendor/lineage/config/bootanimation.mk
