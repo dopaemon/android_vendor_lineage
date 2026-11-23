@@ -306,7 +306,10 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 
 include vendor/lineage/config/version.mk
 
--include vendor/lineage-priv/keys/keys.mk
+# Activate local signing only when the release key pair is available.
+ifeq ($(words $(wildcard vendor/lineage-priv/keys/releasekey.x509.pem vendor/lineage-priv/keys/releasekey.pk8)),2)
+include vendor/lineage-priv/keys/keys.mk
+endif
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
